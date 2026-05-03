@@ -18,10 +18,13 @@ pipeline {
             steps {
                 withCredentials([usernamePassword(
                     credentialsId: 'docker-creds',
-                    usernameVariable: 'chirag21032004',
-                    passwordVariable: 'Welcome@1'
+                    usernameVariable: 'DOCKER_USER',
+                    passwordVariable: 'DOCKER_PASS'
                 )]) {
-                    bat "docker login -u %USER% -p %PASS%"
+                    bat """
+                    echo Logging into Docker...
+                    echo %DOCKER_PASS% | docker login -u %DOCKER_USER% --password-stdin
+                    """
                 }
             }
         }
