@@ -1,25 +1,25 @@
 import type { ReactNode } from 'react';
 import { Sidebar } from './Sidebar';
 import { Header } from './Header';
+import { ChatBot } from '../ui/ChatBot';
 import { useAppStore } from '../../store/appStore';
 import { motion } from 'framer-motion';
 
 interface LayoutProps {
   children: ReactNode;
+  onLogout: () => void;
 }
 
-export function Layout({ children }: LayoutProps) {
+export function Layout({ children, onLogout }: LayoutProps) {
   const { sidebarOpen } = useAppStore();
 
   return (
     <div className="min-h-screen bg-gray-50">
       <Sidebar />
-      <Header />
+      <Header onLogout={onLogout} />
       <motion.main
         initial={false}
-        animate={{
-          marginLeft: sidebarOpen ? 256 : 80,
-        }}
+        animate={{ marginLeft: sidebarOpen ? 256 : 80 }}
         className="pt-16 transition-all hidden md:block"
       >
         <div className="p-6">{children}</div>
@@ -27,6 +27,7 @@ export function Layout({ children }: LayoutProps) {
       <main className="pt-16 md:hidden">
         <div className="p-6">{children}</div>
       </main>
+      <ChatBot />
     </div>
   );
 }

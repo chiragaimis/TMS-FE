@@ -1,0 +1,64 @@
+{
+  "BASE_URL": "http://localhost:8000/api/v1",
+  "LOGIN_URL": "http://127.0.0.1:8000/auth/token/",
+  "REFRESH_URL": "http://127.0.0.1:8000/auth/token/refresh/",
+  "ENDPOINTS": {
+    "AUTH": {
+      "LOGIN": "/auth/token/",
+      "REFRESH": "/auth/token/refresh/",
+      "FORGOT_PASSWORD": "/passwordReset/",
+      "RESET_PASSWORD": "/auth/pass-reset/",
+      "CHANGE_PASSWORD": "/changeMyPassword/",
+      "REGISTER": "/createUser/"
+    },
+    "USER": {
+      "BASE": "/user/",
+      "BY_ID": "/user/:id/"
+    },
+    "CLASSES": {
+      "BASE": "/classes/",
+      "BY_ID": "/classes/:id/"
+    },
+    "TEACHERS": {
+      "BASE": "/teachers/",
+      "BY_ID": "/teachers/:id/"
+    },
+    "BATCHES": {
+      "BASE": "/batches/",
+      "BY_ID": "/batches/:id/"
+    },
+    "STUDENTS": {
+      "BASE": "/students/",
+      "BY_ID": "/students/:id/"
+    },
+    "ATTENDANCE": {
+      "BASE": "/attendance/",
+      "BY_ID": "/attendance/:id/",
+      "BY_BATCH": "/attendance/batch/:batchId/"
+    },
+    "FEES": {
+      "BASE": "/fees/",
+      "BY_ID": "/fees/:id/",
+      "COLLECT": "/fees/collect/",
+      "PENDING": "/fees/pending/"
+    },
+    "DASHBOARD": {
+      "STATS": "/dashboard/stats/",
+      "ACTIVITY": "/dashboard/activity/"
+    },
+    "REPORTS": {
+      "STUDENTS": "/reports/students/",
+      "ATTENDANCE": "/reports/attendance/",
+      "FEES": "/reports/fees/",
+      "SUMMARY": "/reports/summary/"
+    },
+    "BRANCHES": {
+      "BASE": "/branches/",
+      "BY_ID": "/branches/:id/"
+    },
+    "CHATBOT": {
+      "REST": "/chatbot/",
+      "WS": "ws://localhost:8000/ws/chat/ai/"
+    }
+  }
+}

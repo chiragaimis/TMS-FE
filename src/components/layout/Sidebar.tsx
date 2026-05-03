@@ -8,12 +8,9 @@ import {
   Library,
   ClipboardCheck,
   DollarSign,
-  CreditCard,
-  Calendar,
-  FileText,
-  Bell,
-  Settings,
   ChevronLeft,
+  FileText,
+  GitBranch,
 } from 'lucide-react';
 import { useAppStore } from '../../store/appStore';
 import { cn } from '../../utils/helpers';
@@ -26,11 +23,8 @@ const menuItems = [
   { icon: BookOpen, label: 'Batches', path: '/batches' },
   { icon: ClipboardCheck, label: 'Attendance', path: '/attendance' },
   { icon: DollarSign, label: 'Fees', path: '/fees' },
-  { icon: CreditCard, label: 'Payments', path: '/payments' },
-  { icon: Calendar, label: 'Schedule', path: '/schedule' },
   { icon: FileText, label: 'Reports', path: '/reports' },
-  { icon: Bell, label: 'Announcements', path: '/announcements' },
-  { icon: Settings, label: 'Settings', path: '/settings' },
+  { icon: GitBranch, label: 'Branches', path: '/branches' },
 ];
 
 export function Sidebar() {

@@ -6,6 +6,7 @@ export interface Student {
   parentName: string;
   parentPhone: string;
   class: string;
+  class_name?: string;
   batch: string;
   feeStatus: 'paid' | 'pending' | 'overdue';
   attendancePercentage: number;
