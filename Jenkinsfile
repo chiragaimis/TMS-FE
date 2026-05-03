@@ -21,10 +21,10 @@ pipeline {
                     usernameVariable: 'DOCKER_USER',
                     passwordVariable: 'DOCKER_PASS'
                 )]) {
-                    bat """
+                    bat '''
                     echo Logging into Docker...
-                    echo %DOCKER_PASS% | docker login -u %DOCKER_USER% --password-stdin
-                    """
+                    docker login -u %DOCKER_USER% -p %DOCKER_PASS%
+                    '''
                 }
             }
         }
